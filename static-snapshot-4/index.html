@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>W3.CSS Template</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+        <style>
+            body,
+            h1,
+            h2,
+            h3,
+            h4,
+            h5 {
+                font-family: "Raleway", sans-serif;
+                font-size: 18pt;
+            }
+
+            .photo-grid img {
+                
+                opacity: 1;
+                cursor: pointer;
+                filter: grayscale(100%);
+            }
+
+            .photo-grid img:hover {
+                filter: grayscale(0%);
+                
+                transition: filter 1.0s ease;
+            }
+            .photo-grid {
+                height: 100vh;
+                
+            }
+
+            /* Make each column fill the grid height */
+            .photo-grid .w3-third {
+                height: 100%;
+            }
+
+            /* Make images fill their column space */
+            .photo-grid img {
+                width: 100%;
+                height: 33.33%;
+                object-fit: cover;
+            
+            
+
+
+        </style>
+    </head>
+<body class="w3-light-grey w3-content" style="max-width:1600px">
+
+    <!-- Sidebar/menu -->
+    <nav class="w3-sidebar w3-bar-block w3-white w3-animate-left w3-text-grey w3-collapse w3-top w3-center"
+        style="z-index:3;width:280px;font-weight:bold" id="mySidebar"><br>
+        <h1 class="w3-padding-64 w3-center"><b>NINJAGO</b></h1>
+        <a href="javascript:void(0)" onclick="w3_close()"
+            class="w3-bar-item w3-button w3-padding w3-hide-large">CLOSE</a>
+        <a href="#" onclick="w3_close()" class="w3-bar-item w3-button">THE NINJA</a>
+        <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">THE MOVIE</a>
+        <a href="#series" onclick="w3_close()" class="w3-bar-item w3-button">THE SERIES</a>
+        <a href="#dragonsrising" onclick="w3_close()" class="w3-bar-item w3-button">DRAGONS RISING</a>
+        <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">YOUTUBE</a>
+        <a href="#newsletter" onclick="w3_close()" class="w3-bar-item w3-button">NEWSLETTER</a>
+        <a style="margin-top: 30px";href="https://ninjasdev153.w3spaces.com" onclick="w3_close()" class="w3-bar-item w3-button">SMALLER TEXT</a>
+        
+        
+    </nav>
+
+    <!-- Top menu on small screens -->
+    <header class="w3-container w3-top w3-hide-large w3-white w3-xlarge w3-padding-16">
+        <span class="w3-left w3-padding">NINJAGO</span>
+        <a href="javascript:void(0)" class="w3-right w3-button w3-white" onclick="w3_open()">☰</a>
+    </header>
+
+    <!-- Overlay effect when opening sidebar on small screens -->
+    <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer"
+        title="close side menu" id="myOverlay"></div>
+
+    <!-- !PAGE CONTENT! -->
+    <div class="w3-main" style="margin-left:280px">
+
+        <!-- Push down content on small screens -->
+        <div class="w3-hide-large" style="margin-top:83px"></div>
+
+        <!-- Photo grid -->
+        <div class="w3-row">
+            <div class="w3-row photo-grid">
+                <img src="https://images.fandango.com/images/fandangoblog/07-legoninjago-posters-KAI_2764x4096_master.jpg" style="width:100%" onclick="onClick(this)"
+                    alt="Kai is the elemental master of Fire. He is Nya's older brother and Lloyd's sworn protector.">
+                <img src="https://media-cache.cinematerial.com/p/500x/ijhvj2cj/the-lego-ninjago-movie-movie-poster.jpg?v=1505218940" style="width:100%" onclick="onClick(this)"
+                    alt="Cole is the elemental master of Earth. He is the oldest of the group and Jay's best friend.">
+                <img src="https://i.ebayimg.com/00/s/MTYwMFgxMDc5/z/EBgAAOSwO2Jmu94a/\$_57.JPG?set_id=880000500F" style="width:100%" onclick="onClick(this)" 
+                alt="Lloyd is the elemental master of Energy. He is commonly referred to as the Chosen One to fight evil.">
+            </div>
+
+            <div class="w3-row photo-grid">
+                <img src="https://i.ebayimg.com/images/g/S~IAAOSw7tJmu9yp/s-l1200.jpg" style="width:100%" onclick="onClick(this)"
+                    alt="Jay is the elemental master of Lightning. He is Nya's Yin and has a comedic personality.">
+                <img src="https://images.fandango.com/images/fandangoblog/08-legoninjago-posters-ZANE_2764x4096_master.jpg" style="width:100%" onclick="onClick(this)"
+                    alt="Zane is the elemental master of Ice. He's actually a robot and the only one of the ninja who was not born with their powers.">
+                <img src="https://images.fandango.com/images/fandangoblog/04-legoninjago-posters-NYA_2764x4096_master.jpg" style="width:100%" onclick="onClick(this)"
+                    alt="Nya is the elemental master of Water. She was the last ninja to join the group. She is Jay's Yang as well as Kai's younger sister.">
+            </div>
+
+            
+        </div>
+
+        
+
+        <!-- Modal for full size images on click-->
+        <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+            <span class="w3-button w3-black w3-xlarge w3-display-topright">×</span>
+            <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+                <img id="img01" class="w3-image">
+                <p id="caption"></p>
+            </div>
+        </div>
+
+        <!-- About section -->
+        <div class="w3-container w3-dark-grey w3-center w3-text-light-grey w3-padding-32" id="about">
+            <h4><b>The Movie</b></h4>
+            <img src="https://files.fairu.app/97616c2f-5a48-46c8-9cf7-935a827c40ad/the-lego-ninjago-movie-backdrop-678c2c9a85e40.jpg?width=2560&quality=90" alt="Me" class="w3-image w3-padding-32" width="600" height="650">
+            <div class="w3-content w3-justify" style="max-width:600px">
+                <h4>Plot</h4>
+                <p>The battle for NINJAGO City calls to action young Master Builder Lloyd, aka the Green Ninja, 
+                    along with his friends, also secret ninja warriors. Led by Master Wu, as wise-cracking as he 
+                    is wise, they must defeat the evil warlord Garmadon, who also happens to be Lloyd's dad. 
+                    Pitting father against son, the epic showdown tests these fierce but undisciplined modern-day
+                    ninjas as they learn to check their egos and pull together to unleash the inner power 
+                    of Spinjitzu.
+                </p>
+                <p>September 22, 2017</p>
+                <p> Starring:
+                    <ul>
+  <li>Dave Franco</li>
+  <li>Jackie Chan</li>
+  <li>Zack Woods</li>
+  <li>Justin Theroux</li>
+  <li>And more!</li>
+</ul></p>
+                
+                <b><a href="https://www.google.com/search?client=safari&rls=en&q=the+ninjago+movie&ie=UTF-8&oe=UTF-8$0" style="font-size: 16pt"; >Click here to learn more about the movie and where to watch!</b></a>
+                <hr class="w3-opacity">
+                
+
+                
+
+                    
+                </div>
+            </div>
+        </div>
+
+         <div class="w3-container w3-dark-grey w3-center w3-text-light-grey w3-padding-32" id="series">
+            <h4><b>The Series</b></h4>
+            <img src="https://m.media-amazon.com/images/M/MV5BNDY5ZTI1MzUtOWY4MC00NjFkLWEwNDctZWVlMTMzOWUwMDM1XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Me" class="w3-image w3-padding-32" width="600" height="650">
+            <div class="w3-content w3-justify" style="max-width:600px">
+                <h4>Plot</h4>
+                <p>Ninjago follows a team of six teenage elemental ninjas: Kai, Jay, Cole, Zane, Lloyd, and Nya—trained by Master Wu 
+                   in the art of being a ninja to protect their world from villains like Lord Garmadon and other villains. 
+                   Set in a modern, technology-driven world, the series centers on friendship, growth, and defending Ninjago City. 
+                </p>
+                <p>January 11, 2011</p>
+                <p> Starring:
+                    <ul>
+  <li>Sam Vincent</li>
+  <li>Vincent Tong</li>
+  <li>Kirby Morrow</li>
+  <li>Michael Adamthwaite</li>
+  <li>And more!</li>
+</ul></p>
+                <a href="https://ninjago.fandom.com/wiki/Ninjago_(TV_series)$0" style="font-size: 16pt";>Click here to learn more about the series and where to watch!</a>
+                <hr class="w3-opacity">
+                
+
+                
+
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="w3-container w3-dark-grey w3-center w3-text-light-grey w3-padding-32" id="dragonsrising">
+            <h4><b>Dragons Rising</b></h4>
+            <img src="https://m.media-amazon.com/images/S/pv-target-images/07c6a0fcfd202f78be6da4c19ec96afa2c0d78b526d776c9b34cafe72072a4ec.jpg" alt="Me" class="w3-image w3-padding-32" width="600" height="650">
+            <div class="w3-content w3-justify" style="max-width:600px">
+                <h4>Plot</h4>
+                <p>Two teenagers from different worlds use their Ninja powers to defend dragons from villains who want to harvest the dragons' life forces. 
+                </p>
+                <p>June 1, 2023</p>
+                <p> Starring:
+                    <ul>
+  <li>Sam Vincent</li>
+  <li>Vincent Tong</li>
+  
+  <li>Michael Adamthwaite</li>
+  <li>Deven Mack</li>
+  <li>Sabrina Pitre</li>
+  <li>And more!</li>
+</ul></p>
+                <a href="https://ninjago.fandom.com/wiki/Ninjago:_Dragons_Rising$0" style="font-size: 16pt";>Click here to learn more about the series and where to watch!</a>
+                <hr class="w3-opacity">
+                
+
+                
+
+                    
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact section -->
+        <div class="w3-container w3-light-grey w3-padding-32 w3-padding-large" id="contact">
+            <div class="w3-content" style="margin: 30px">
+                <h4 class="w3-center"><b>YouTube</b></h4>
+                <p>Check out LEGO's YouTube with Ninjago content, episodes, and more!</p>
+                <form action="/action_page.php" target="_blank">
+                    
+                    </div>
+                    <a href="https://www.youtube.com/user/LEGO">
+                    <button type="submit" class="w3-button w3-block w3-black w3-margin-bottom">LEGO Youtube</button>
+                    </a>
+                </form>
+            </div>
+        </div>
+
+        <div class="w3-container w3-light-grey w3-padding-32 w3-padding-large" id="Newsletter">
+            <div class="w3-content" style="margin: 30px">
+                <h4 class="w3-center"><b>Ninjago Newsletter</b></h4>
+                <p>Sign up to receive all Ninjago related news!</p>
+                <form action="/action_page.php">
+  <label for="fname">Email Address:</label>
+  <input type="text" id="fname" name="fname" placeholder="example@address.com"><br><br>
+  
+  <input type="submit" value="Submit">
+</form>
+            </div>
+        </div>
+
+        
+
+        
+        <!-- End page content -->
+    </div>
+
+    <script>
+        // Script to open and close sidebar
+        function w3_open() {
+            document.getElementById("mySidebar").style.display = "block";
+            document.getElementById("myOverlay").style.display = "block";
+        }
+
+        function w3_close() {
+            document.getElementById("mySidebar").style.display = "none";
+            document.getElementById("myOverlay").style.display = "none";
+        }
+
+        // Modal Image Gallery
+        function onClick(element) {
+            document.getElementById("img01").src = element.src;
+            document.getElementById("modal01").style.display = "block";
+            var captionText = document.getElementById("caption");
+            captionText.innerHTML = element.alt;
+        }
+
+    </script>
+
+
+</body>
+
+</html>
